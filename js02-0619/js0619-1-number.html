@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>js第二堂課-變數宣告</h2>
+
+    <script>
+        // var=> 允許重複宣告  
+        // let=> 不允許重複宣告=> 宣告較嚴謹
+        // const=> 一旦 建立無法更改變數
+        
+        var  price; //建立變數
+        price=100;   //給值
+        var qty=5;
+
+        console.log('price：'+price+'元');ㄋ
+        console.log('qty：'+qty);
+        console.log('total：'+price*qty+'元');
+
+        //呈現方法二：字串字面值串接資料
+        //頭尾加上反引號`
+        //遇到變數或運算式要加上${}
+        console.log(`price:${price}元`);
+        console.log(`qty:${qty}`);
+        console.log(`total:${price*qty}元`);
+    </script>
+</body>
+</html>

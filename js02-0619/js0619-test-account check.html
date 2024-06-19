@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 變數/值 比較運算子 變數/值
+        //相等==
+        //不相等 !=
+
+        let uid='aaa';
+        console.log(`我的帳號：${uid}`);
+        let upw='456';
+        console.log(`我的密碼：${upw}`);
+        
+        // 測試用
+        uid='aaa'
+        upw='987'
+
+        if (uid == 'aaa'&& upw =='456'){
+            console.log('帳密正確');
+        }else  if (uid != 'aaa' && upw =='456'){
+            console.log('帳號錯誤');
+        }else if (uid == 'aaa' && upw !='456'){
+            console.log('密碼錯誤');
+        }else  if (uid != 'aaa'&& upw !='456'){
+            console.log('帳密錯誤');
+        }
+    </script>
+    
+    
+</body>
+</html>
