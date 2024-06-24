@@ -36,13 +36,13 @@
         S = prompt('請輸入您的分數');
 
             //檢查是否按了取消
-        if (s==null){
+        if (S==null){
                 console.log('您按了取消');
         } else {
-            if(score==''){
-                console.log('分數不能空白')
+            if(S==''){
+                console.log('分數不能空白');
             }else{
-                score=Number(s);
+                S=Number(S);
             }
                 //轉換字串分數為數值分數
             if (isNan(S)){
@@ -50,8 +50,8 @@
             }else{
                 //檢查是否為有效分數範圍
                 //分數<0或分數>100
-                    if(S<0||S>100){
-                    console.log(s+'不是有效的分數範圍')
+                if(S<0||S>100){
+                    console.log(S+'不是有效的分數範圍');
                 } else {
                     if (S >= '60'){
                     console.log('結果：及格')};
