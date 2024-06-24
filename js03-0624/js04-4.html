@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script>
+        
+        
+        let S;
+        S = prompt('輸入分數');
+        let intScore=Number(S);
+        
+    if(S==null){
+        console.log('您按了取消');
+    }else if(S==''){
+        console.log('分數不能空白');
+    }else if(S >100|| S<0){
+        console.log('分數不是有效範圍');
+    }
+    else if(S>=60){
+        console.log('及格');
+    }else if(S<60){
+        console.log('不及格');
+    }else{
+        console.log('分數輸入錯誤');
+    }   
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let S;
+        // S = window.prompt('請輸入您的分數');
+        // if (S >= '60' && S <= '100') {
+        //     console.log('分數及格');
+        // } else if (S <= '0' && S > '100') {
+        //     console.log('非有效分數範圍');
+        // }
+        
+        // // window.alert('分數通過'+S);
+        // // if (S >='60'&& S<='100'){
+        // //     console.log('分數及格');
+        // // }else  if (uid != 'aaa' && upw =='456')
+        // //     console.log('帳號錯誤');
+        // window.alert(S);
+
+        // // let S;
+        // // S = prompt('請輸入您的分數');
+        // // if (S >= '60' && S <= '100') {console.log('結果：分數及格')
+        // // }else(S <= '0' && S) {console.log('非有效分數範圍')};
+        
+        //     window.alert('分數錯誤'+S);
+
+        // teacher
+        let S;
+        S = prompt('請輸入您的分數');
+
+            //檢查是否按了取消
+        if (s==null){
+                console.log('您按了取消');
+        } else {
+            if(score==''){
+                console.log('分數不能空白')
+            }else{
+                score=Number(s);
+            }
+                //轉換字串分數為數值分數
+            if (isNan(S)){
+                console.log('輸入的分數錯誤');
+            }else{
+                //檢查是否為有效分數範圍
+                //分數<0或分數>100
+                    if(S<0||S>100){
+                    console.log(s+'不是有效的分數範圍')
+                } else {
+                    if (S >= '60'){
+                    console.log('結果：及格')};
+                } else { 
+                    console.log('結果：不及格');
+                }
+            }
+        }
+            
+            //test
+            // let S;
+            // S = prompt('請輸入您的分數');
+            // //檢查是否按了取消
+            // if (S==null){
+            //     console.log('您按了取消');
+            // } else
+            //     if (S >= 60 && S<= 100 ){
+            //     console.log('結果：及格');
+            // }else{ 
+            //     console.log('結果：不及格');
+            // }
+    </script>
+</body>
+
+</html>
