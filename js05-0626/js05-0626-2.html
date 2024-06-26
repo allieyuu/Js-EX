@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //狀況1：起>結
+        //狀況2：起<結
+
+        // let sNum = Number(prompt('起始值'));
+        let sNum = prompt('起始值');    
+        sNum = Number(sNum);
+        let eNum = prompt('結束值'); 
+        eNum = Number(eNum);
+
+        //處理狀況2：起<結
+        //調換
+        if ( sNum < eNum){
+            let tmp=sNum; //大的暫時給tmp
+            sNum=eNum;  //小的給sNum
+            eNum=tmp;   //大的給eNum
+        }
+
+
+        let tot1 = 0;
+        // 奇數合
+        let tot2 = 0;
+        // 偶數合
+
+        for (let i=sNum; i<= eNum; i++){
+
+            if ( i % 2 === 1 ) {
+                tot1 = tot1 + i;
+                // 奇數
+            } else {
+                tot2 = tot2 + i;
+            }   // 偶數
+    }
+    console.log(`${sNum}-${eNum}的奇數合=> ${tot1}`);
+    console.log(`${sNum}-${eNum}的偶數合=> ${tot2}`);
+
+    </script>
+
+        <!-- // let a ="";
+        // let a1="";
+        // let tota=1;
+
+        // let b ="";
+        // let b1="";
+        // let totb=1;
+
+        // for (let i = 1; i <= 10; i++){
+        //     if (i % 2 === 0){       
+        //         a=a1+i+' ';          
+        //         a1=a1 + i;
+        //         if(i !=10){
+        //             a1= a1 + '+';
+        //         }
+        //         tota= tota+ i;
+        //     }
+        // }
+        // document.write(`1-10中的偶數合計為=>${a1}=${tota}<br>`);
+
+        // document.write(`1-10中的偶數合計為=>${a1}=${tota}<br>`); -->
+    
+
+</body>
+</html>
