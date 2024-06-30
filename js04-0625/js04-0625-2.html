@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let x;
+        x = prompt('輸入血型');
+        if (x == null) {
+            document.write('您按了取消');
+        } else if (x =='') {
+            document.write('欄位不能空白');
+        } else if (x =='A'||x =='a') {
+            document.write('A型');
+        } else if (x =='B'||x =='b') {
+            document.write('B型');
+        } else if (x =='AB'||x =='ab'){
+            document.write('AB型'); 
+        }else if (x =='O'||x =='o'){
+            document.write('O型');
+        } else {
+            document.write('err');}
+    </script>
+</body>
+
+</html>
