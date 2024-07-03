@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // 請設計一個函式。能夠四則運算
+        
+        function calc(a,b,c){
+            if(c=='+'){
+                // 5+3=8
+                document.write(`${a}+${b}=${a+b}`);
+            }
+        }
+        //使用輸入式窗產生任意二數與運算式符號
+        //最後再呼叫函式
+        //calc(5,3,'+');
+
+
+        // function calca(inputA,inputB,inputC){
+        //     if(inputC=='+'){
+        //         document.write(`${inputA}+${inputB}=${inputA+inputB}`);
+        //     }
+        //     else if(inputC=='-'){
+        //         document.write(`${inputA}+${inputB}=${inputA-inputB}`);
+        //     }
+        //     else if(inputC=='*'){
+        //         document.write(`${inputA}+${inputB}=${inputA*inputB}`);
+        //     }
+        //     else if(inputC=='/'){
+        //         document.write(`${inputA}+${inputB}=${inputA/inputB}`);
+        //     }
+        // }
+        // let inputA = Number(prompt('請輸入一個數字'));
+        // let inputB = Number(prompt('請再輸入一個數字'));
+        // let inputC = prompt('請輸入一個運算符號(+-*/)');
+        // calca(inputA,inputB,inputC);
+
+        //變數名稱可以等於參數名稱 (但兩者視為不同人，只是同名同姓)
+
+        //老師示範
+        function calca(inputA,inputB,inputC){
+            if(inputC=='+'){
+                document.write(`${inputA}+${inputB}=${inputA+inputB}`);
+            }else if(inputC=='-'){
+                document.write(`${inputA}+${inputB}=${inputA-inputB}`);
+            }else if(inputC=='*'){
+                document.write(`${inputA}+${inputB}=${inputA*inputB}`);
+            }else if(inputC=='/'){
+                document.write(`${inputA}+${inputB}=${(inputA/inputB).toFixed(2)}`); //小數點取到後面兩位//
+            }else{
+                document.write('運算符號不存在');
+            }
+        }
+        //老師示範
+        if (inputA==null||inputB==null||inputC==null){
+            document.write('按了取消，無法運算');
+        }else if (isNaN(inputA) || isNaN(inputB)) {
+            document.write('非數字，無法計算');
+        }else {
+            inputA = Number(inputA.trim());
+            inputB = Number(inputA.trim());
+            calca(inputA,inputB,inputC);    
+        }
+        
+
+        //me
+        function calca(inputA,inputB,inputC){
+            if(isNaN(x)) {
+                document.write('您輸入的不是數字');
+            }
+            else if (calca==null){
+                document.write('您按了取消');
+            }
+        }
+
+        let inputA = Number(prompt('請輸入一個數字'));
+        let inputB = Number(prompt('請再輸入一個數字'));
+        let inputC = prompt('請輸入一個運算符號(+-*/)');
+        calca(inputA,inputB,inputC);
+
+    </script>
+</body>
+</html>

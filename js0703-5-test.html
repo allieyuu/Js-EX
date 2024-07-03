@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    let input; //輸入分數
+    let Good = 0;//及格人數 (分數>=60且分數<=100)
+    let Bad = 0;//不及格人數 (分數>0且分數<60)
+    let tot = 0; //總分
+    let avg = 0; //總平均
+
+    for(let i=1;i>=i;i++){
+        input = prompt('請輸入分數');
+        if(input==='-1'||input==null){
+            document.write(`第${i}次分數：${input}<br>`);
+            break;
+        // if(isNaN(input)){
+        //     document.write(`非有效數值，請重新輸入`);
+        //     continue;
+    }
+    input = Number(input);
+    if(input>=60 && input <=100){
+        Good++;
+    }else if (input <60 && input >=0){
+        Bad++;
+    }
+    tot= tot+input;
+    avg= tot/(Good+Bad);
+    document.write(`第${i}次分數：${input}<br>`);
+        }
+    
+    document.write('-----------------------<br>');
+    document.write(`及格人數：${Good}人<br>`);
+    document.write(`不及格人數：${Bad}人<br>`);
+    document.write(`總分：${tot}分<br>`);
+    document.write(`總平均：${avg.toFixed(2)}分<br>`);
+
+    </script>
+</body>
+</html>
