@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // 題目：用Math.random函數隨機產生5個數字
+        // // 存入陣列S中，其中S陣列內的數值不得重複
+
+
+        // let S1=[]; //沒有加入特別號 (總共5碼)
+        // let S2=[]; //有加入特別號 (5碼+1碼特別號=>總共6碼)
+        // let a=Math.floor(Math.random()); 
+        // for(let i =0;i<S1.length;i++){
+        //     if(S1.length>5) //當S1矩陣長度大於5時，停止隨機產生亂碼
+
+        // console.log.sort(S1);
+        // }
+
+
+
+    let S1 = []; // 沒有加入特別號 (總共6碼)
+    let S2 = []; // 有加入特別號 (6碼+1碼特別號=>總共7碼)
+    let index = 0; 
+    while (S1.length < 6) {
+        let a = Math.floor(Math.random() * 50)+1; 
+        if (S1.indexOf(a) == -1) { // 如果S1陣列中不包含這個數字，則加入
+            S1[index] = a;
+            index=index+1;
+        }
+    }
+
+    S1.sort((a, b) => a - b);
+    console.log(S1);
+
+    for (let i = 0; i < S1.length; i++) {
+        S2[i] = S1[i];
+    }
+    let specialNumber=Math.floor(Math.random() *50)+1;
+    // do {
+    //     specialNumber = Math.floor(Math.random() *50)+1; 
+    // } while (S2.indexOf(specialNumber) !== -1); 
+
+    S2=[S1.length]; 
+    console.log(S2);
+</script>
+
+
+
+
+    </script>
+</body>
+
+</html>

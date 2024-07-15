@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 取亂數 => 0-1之間
+        // let r1 =Math.random();
+        // console.log(Math.random());
+        // console.log(r1);
+        // // 小數二位(備註：toFixed() 方法用來將一個數字轉成固定小數位數的"字串")
+        // console.log(Number(r1.toFixed(2)));
+
+        // //小數兩位(沒有使用取小數的方式)
+        // // 1.先乘100
+        // console.log(r1*100);
+        // // 2.去除小數
+        // console.log(Math.floor(r1*100));
+        // // 3.除以100
+        // console.log(Math.floor(r1*100)/100);
+    
+        
+        //找出亂數1到5任意值
+        let r2=Math.random();
+        console.log(r2);
+        console.log(r2*5);
+        console.log((r2*5)+1);
+        console.log((Math.floor(r2*5))+1);
+
+        //宣告一個陣列
+        let arr1 = [1,100,50,3,5];
+        
+        //  尋找陣列中是否存在
+        
+        //方法一
+        //存在 -> 傳回第一次出現的陣列編號
+        //不存在 -> -1
+        let result = arr1.indexOf(Math.floor(r2*5)+1); // indexOf會回傳給定元素於陣列中第一個被找到之索引
+        console.log('陣列中尋找的結果:'+result);
+        //陣列若沒有找到亂數值,加入陣列push()
+        if (result == -1){
+            arr1.push(Math.floor(r2*5) +1 );
+        }
+        console.log(arr1);
+
+        //方法二
+        //存在 -> true
+        //不存在 -> false
+        let result2 = arr1.includes(Math.floor(r2*5) +1 );
+        console.log('陣列中尋找的結果includes'+ result2);
+        if (result2 == false ){
+            arr1.push(Math.floor(r2*5)+1);
+        }
+        console.log(arr1);
+
+</script>
+</body>
+</html>
