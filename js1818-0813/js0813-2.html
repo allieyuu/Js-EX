@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .wrap{
+            margin-top: 50px;
+            margin-left: 50px;
+            background-color: beige;
+        }
+        #myDiv{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+    </style>
+
+<body>
+    <div class="wrap">
+        <div id="myDiv"></div>
+            <button class="red">紅</button>
+            <button class="green">綠</button>
+            <button class="blue">藍</button>
+    </div>
+</body>
+
+    <p id="wrap" onmouseover="changeColor();" onmouseout="restore()"></p>
+    <script>
+        //滑鼠碰到時變色
+        function changeColor(){
+            //取得
+            let msg = document.getElementById('wrap');
+            //前景色
+            msg.style.color = 'beige';
+            //背景色
+            msg.style.backgroundColor = 'beige';
+            msg.className="wrap";
+        }
+
+         
+    </script> 
+
+</html>

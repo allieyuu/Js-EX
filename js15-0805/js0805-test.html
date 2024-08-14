@@ -1,0 +1,135 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡易待辦事項</title>
+    <style>
+        /*記得先處理Ul本身瀏覽器的預設值*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin-top: 100px;
+            margin-left: 50px;
+        }
+
+        ul {
+            width: 200px;
+        }
+
+        ul li {
+            position: relative;
+            /*自己原本顯示的位置為基準位置*/
+            padding: 18px 15px;
+            list-style: none;
+        }
+
+        .form-box{
+            margin-bottom: 10px;
+        }
+        .close {
+            position: absolute;
+            /*相對於父層的相對位置*/
+            top: 0;
+            right: 0;
+            padding: 12px 10px;
+        }
+
+        .close:hover {
+            background-color: aquamarine;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="" class="form-box">
+            <input type="text" id="myInput" placeholder="輸入待辦事項">
+            <input type="button" value="加入" id="btn">
+            <input type="button" value="刪除" id="btn2">
+        </form>
+
+        <ul id="myUL">
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </div>
+
+    <script>
+        // 為現有的清單項目新增刪除按鈕
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("刪除");
+            span.className = "close"; /*為了使 span 元素能夠應用到 close 類別的 CSS 樣式*/
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        // 處理新增按鈕的點擊事件
+        let myBtn = document.querySelector('#btn'); /*取得按鈕*/
+        myBtn.addEventListener('click', addItem);
+
+        // 處理 Enter 鍵的事件
+        let myInput = document.querySelector('#myInput'); /*取得文字方塊*/
+        myInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                addItem();
+            }
+        });
+
+        function addItem() {
+            // 新增li元素
+            var li = document.createElement("li");
+            // 取得文字方塊的內容
+            var inputValue = document.getElementById("myInput").value;
+            // 新增文字節點
+            var t = document.createTextNode(inputValue);
+            // 將文字節點加入到新的節點li
+            li.appendChild(t);
+            //檢查是否有內容
+            if (inputValue.trim() === '') {
+                alert("文字方塊不能空白!")
+                return;
+            }
+            
+            console.log("輸入的內容是：" + inputValue);
+            // 將新結點加入到ul元素的最後一個子節點
+            document.getElementById("myUL").appendChild(li);
+            /*appendChild 方法確保了新的子節點總是被添加到父節點的最後一個位置*/
+
+            // 新增刪除按鈕
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("刪除");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            // 清空文字方塊
+            document.getElementById("myInput").value= "";
+
+            // 為新刪除按鈕添加事件
+            span.addEventListener('click', function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            });
+        }
+
+        // 為現有的刪除按鈕添加事件
+        var close = document.getElementsByClassName("close");
+        for (i = 0; i < close.length; i++) {
+            close[i].addEventListener('click', function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>
+```

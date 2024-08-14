@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+</html>
+
+<body>
+    <style>
+        /*記得先處理Ul本身瀏覽器的預設值*/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            margin: 50px;
+        }
+
+        ul {
+            width: 135px;
+        }
+
+        ul li {
+            position: relative;
+            /*自己原本顯示的位置為基準位置*/
+            padding: 15px 15px;
+            list-style: none;
+        }
+
+        .close {
+            position: absolute;
+            /*相對於父層的相對位置*/
+            top: 0;
+            right: 0;
+            padding: 12px 10px;
+        }
+
+        .close:hover {
+            background-color: aquamarine;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="wrap">
+        <form action="">
+            <input type="text" id="myInput">
+            <input type="button" value="加入" id="btn">
+            <input type="button" value="刪除" id="btn2">
+        </form>
+
+        <ul id="myUL">
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+    </div>
+
+    <script>
+        //現有的LI項目後，新增刪除文字
+        var myNodelist = document.getElementsByTagName("li");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement("span");
+            var txt = document.createTextNode("刪除");
+            span.className = "close";
+            span.appendChild(txt);
+            myNodelist[i].appendChild(span);
+        }
+
+        // 刪除第一個li
+        let btn2 = document.querySelector('#btn2');
+        btn2.addEventListener('click', () => {
+            //移除第一個li
+            let removeElm = document.getElementsByTagName('li')[0];
+            //找到父元素節點
+            let parentElm = removeElm.parentNode;
+            //從父元素移除第一個li子節點
+            parentElm.removeChild(removeElm);
+        });
+        // span.addEventListener('click',()=>{
+        //     let myLi =document.getElementsByTagName('li');
+        //     for(let i =0; i<myLi.length;i++){
+        //     }
+        // })
+
+        //取得按鈕事件
+        let myBtn = document.querySelector('#btn');
+        myBtn.addEventListener('click', () => {
+
+            // 新增li元素
+            var li = document.createElement("li");
+            // 取得文字方塊的內容
+            var inputValue = document.getElementById("myInput").value;
+            // 新增文字節點
+            var t = document.createTextNode(inputValue);
+            // 將文字節點加入到新的節點li
+            li.appendChild(t);
+            //檢查是否有內容
+            if (inputValue.trim() === '') {
+                alert("文字方塊不能空白!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+
+                // 動態新增加入時的X
+                var span = document.createElement("span");
+                var txt = document.createTextNode("刪除");
+                span.className = "close";
+                span.appendChild(txt);
+                li.appendChild(span);
+
+                // 新增刪除動作
+                span.onclick = function (){
+                    var curli = this.parentNode;
+                    curLi.style.display = 'none';
+                }
+            }
+                //清除文字方塊內容
+            document.getElementById("myInput").value = "";
+        });
+
+                // 指定刪除按鈕    
+        //         let myClose = document.getElementsByName('span');
+        //         console.log(myClose);
+        //         for (i = 0; i < close.length; i++) {
+        //             myclose[i].onclick = function () {
+        //                 let div = this.parentElement;
+        //                 div.style.display = "none";
+        //             }
+        //         }
+
+        // let close = document.getElementsByClassName("close");
+        // for (let i = 0; i < close.length; i++) {
+        //     close[i].onclick = function () {
+        //         let div = this.parentElement;
+        //         div.style.display = "none";
+        //     }
+        // }
+    </script>
+</body>

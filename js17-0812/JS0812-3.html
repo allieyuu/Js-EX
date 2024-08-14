@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 當游標離開文字方塊時，檢查輸入的內容不足五個字時，顯示訊息 -->
+    <form>
+        <label for="uid">會員編號</label><br>
+        <span id="errMsg"></span><br>
+        <input type="submit" value="送出">
+    </form>
+    <script>
+        let uid = document
+        uid.addEventListener('blur', function () {
+            let errMsg = document.getElementById('errMsg');
+            // 預設errMsg內容為空字串
+            errMsg.textContent='';
+            //檢查文字方塊內容是否有五個字
+            if (this.value.lengh != 5) {
+                // 若沒有，則顯示提醒訊息給errMsg
+                errMsg.textContent = '會員編號必須是5個字';
+            } else {
+                errMSg.textContent = '會員編號必須是5個字'
+            }
+        });
+    </script>
+</body>
+
+</html>

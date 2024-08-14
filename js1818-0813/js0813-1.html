@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        p{
+            font-size: 32px;
+            color: red;
+        }
+        .hot{
+            font-size:40px;
+            font-weight: bold;
+        }
+
+        .restoreHot{
+            font-size: 32px;
+            font-size: normal;
+        }
+
+
+    </style>
+
+    <p id="msg" onmouseover="changeColor();" onmouseout="restore()">Hello</p>
+    <script>
+        //滑鼠碰到時變色
+        function changeColor(){
+            //取得
+            let msg = document.getElementById('msg');
+            //前景色
+            msg.style.color = 'red';
+            //背景色
+            msg.style.backgroundColor = '#000 ';
+            msg.className="hot";
+        }
+
+        //滑鼠離開時還原色彩
+        function restore() {
+            let msg = document.getElementById('msg');
+            msg.style.color ='';
+            msg.style.backgroundColor ='';
+            msg.className='restoreHot';
+        }
+    </script>
+
+</body>
+</html>
