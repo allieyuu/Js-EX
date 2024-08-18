@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>內容切換示例</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .content {
+            padding: 20px;
+            margin: 10px;
+            border: 2px solid #ccc;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="buttons">
+        <button onclick="showAbout()">關於我</button>
+        <button onclick="showExps()">學經歷</button>
+        <button onclick="showContact()">聯絡我</button>
+        <button onclick="showNews()">最新消息</button>
+    </div>
+
+    <div id="about" class="content visible">大家好，我是xxx</div>
+    <div id="exps" class="content hidden">學經歷內容區塊</div>
+    <div id="contact" class="content hidden">
+        聯絡方式：
+        <br>Email: example@example.com
+        <br>Mobile: 0912345678
+    </div>
+    <div id="news" class="content hidden">最新消息內容區塊</div>
+
+    <script>
+        function hideAll() {
+            document.getElementById('about').classList.add('hidden');
+            document.getElementById('exps').classList.add('hidden');
+            document.getElementById('contact').classList.add('hidden');
+            document.getElementById('news').classList.add('hidden');
+        }
+
+        function showAbout() {
+            hideAll();
+            document.getElementById('about').classList.remove('hidden');
+        }
+
+        function showExps() {
+            hideAll();
+            document.getElementById('exps').classList.remove('hidden');
+        }
+
+        function showContact() {
+            hideAll();
+            document.getElementById('contact').classList.remove('hidden');
+        }
+
+        function showNews() {
+            hideAll();
+            document.getElementById('news').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
